@@ -8,6 +8,7 @@ target 'ToDoList' do
   # Pods for ToDoList
   pod 'Moya', '~> 15.0'
   pod 'FirebaseAuth'
+  pod 'ReSwift'
 
   target 'ToDoListTests' do
     inherit! :search_paths

@@ -43,18 +43,17 @@ class LandingPageViewController: UIViewController {
                                       message: nil,
                                       preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { _ in
-            
+            store.dispatch(RoutingAction(destination: .login))
         }))
         alert.addAction(UIAlertAction(title: "Sign up", style: .default, handler: { _ in
-            
+            store.dispatch(RoutingAction(destination: .signup))
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.navigationController?.present(alert, animated: true)
     }
     
     @IBAction func redirectTodoPage(_ sender: UIButton) {
-        let viewController = ToDoViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
+        store.dispatch(RoutingAction(destination: .todo))
     }
     
     func setupCollectionView() {

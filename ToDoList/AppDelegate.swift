@@ -5,23 +5,24 @@
 //  Created by Indra on 3/14/23.
 //
 
-import UIKit
+import ReSwift
 import FirebaseCore
 import CoreData
 
+var store = Store<AppState>(reducer: appReducer, state: nil)
+ 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var appRouter: AppRouter?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
-        window = UIWindow()
-        
-        let rootViewController = UINavigationController(rootViewController: LandingPageViewController())
-        
-        window?.makeKeyAndVisible()
-        window?.rootViewController = rootViewController
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        window.makeKeyAndVisible()
+        appRouter = AppRouter(window: window)
         return true
     }
     
