@@ -26,7 +26,13 @@ class SignupViewController: UIViewController {
         }
         
         FirebaseAuthManager.signup(email: email, password: password) { result in
-            // TODO: - Save to Core Data
+            switch result {
+            case .success:
+                store.dispatch(ChangeCurrentUserAction(username: email))
+                store.dispatch(RoutingAction(destination: .landing))
+            case .failure:
+                print("failure")
+            }
         }
     }
 }

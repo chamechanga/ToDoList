@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22A8380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ToDo" representedClassName="ToDo" syncable="YES">
+    <entity name="TodoItem" representedClassName="TodoItem" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="todoItem" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>

@@ -5,106 +5,97 @@
 //  Created by Indra on 3/15/23.
 //
 
-import UIKit
+import ReSwift
 
 class ToDoViewController: UIViewController {
-    let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: "cell")
-        return tableView
-    }()
-    
-    private var todoItems: [ToDo] = []
-    private let coreDataManager = CoreDataManager()
+    @IBOutlet weak var tableView: UITableView!
+    private var todoItems: [TodoItem] = []
+    private let currentUser: String = store.state.currentUserState.currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.addSubview(tableView)
-        self.tableView.frame = self.view.bounds
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
         
+        setupView()
+        store.dispatch(GetTodoListAction(currentUser: currentUser))
+        store.subscribe(self) {
+            $0.select {
+                $0.todoListState
+            }
+        }
+    }
+    
+    private func setupView() {
+        title = "Todo List"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTodoItem))
-        self.reloadTodoList()
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
     
     @objc
     private func addTodoItem() {
-        let alert = UIAlertController(title: "Add Item",
-                                      message: "Enter new item",
-                                      preferredStyle: .alert)
-        alert.addTextField()
-        alert.addAction(UIAlertAction(title: "Submit",
-                                      style: .default,
-                                      handler: { [weak self] _ in
-            guard let field = alert.textFields?.first, let text = field.text else {
+        showTodoItemAlert(title: "Add Item", message: "Enter new item") { [weak self] text in
+            guard let `self` = self, let `text` = text else {
                 return
             }
             
-            self?.coreDataManager.createItem(text, user: "admin@admin.com")
-            self?.reloadTodoList()
+            store.dispatch(AddTodoItemAction(currentUser: self.currentUser, todoItem: text))
+        }
+    }
+    
+    private func showTodoItemAlert(title: String, message: String, _ completionHandler: @escaping (String?) -> ()) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addTextField()
+        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { _ in
+            completionHandler(alert.textFields?.first?.text)
         }))
         self.navigationController?.present(alert, animated: true)
     }
-    
-    private func reloadTodoList() {
-        self.todoItems = coreDataManager.getItems()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
 }
 
-extension ToDoViewController: UITableViewDelegate {
-    
-}
-
-extension ToDoViewController: UITableViewDataSource {
+extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = todoItems[indexPath.row].todoItem
-        cell.detailTextLabel?.text = todoItems[indexPath.row].createdAt?.convertToString()
-        return cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        }
+        cell?.textLabel?.text = todoItems[indexPath.row].todoItem
+        cell?.detailTextLabel?.text = todoItems[indexPath.row].createdAt?.convertToString()
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: "Edit Items", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { _ in
-            let alert = UIAlertController(title: "Edit Item",
-                                          message: "Enter new item",
-                                          preferredStyle: .alert)
-            alert.addTextField()
-            alert.textFields?.first?.text = self.todoItems[indexPath.row].todoItem
-            alert.addAction(UIAlertAction(title: "Submit",
-                                          style: .default,
-                                          handler: { [weak self] _ in
-                guard
-                    let field = alert.textFields?.first,
-                    let text = field.text,
-                    let item = self?.todoItems[indexPath.row]
-                else {
+        alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { [weak self] _ in
+            self?.showTodoItemAlert(title: "Edit Item", message: "Enter new item") { [weak self] text in
+                guard let `self` = self, let `text` = text else {
                     return
                 }
-                
-                self?.coreDataManager.editItem(item: item, newTodoItem: text)
-                self?.reloadTodoList()
-            }))
-            self.navigationController?.present(alert, animated: true)
+                store.dispatch(EditTodoItemAction(currentUser: self.currentUser,
+                                                  todoItem: self.todoItems[indexPath.row],
+                                                  newTodoItem: text,
+                                                  index: indexPath.row))
+            }
         }))
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
-            guard let item = self?.todoItems[indexPath.row] else {
-                return
-            }
-            self?.coreDataManager.deleteItem(item: item)
-            self?.reloadTodoList()
+            guard let `self` = self else { return }
+            let item = self.todoItems[indexPath.row]
+            store.dispatch(DeleteTodoItemAction(currentUser: self.currentUser, todoItem: item))
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.navigationController?.present(alert, animated: true)
+    }
+}
+
+extension ToDoViewController: StoreSubscriber {
+    func newState(state: TodoListState) {
+        self.todoItems = state.todo
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }

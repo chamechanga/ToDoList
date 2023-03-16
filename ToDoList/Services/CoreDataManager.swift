@@ -10,9 +10,9 @@ import UIKit
 class CoreDataManager {
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func getItems() -> [ToDo] {
+    func getItems() -> [TodoItem] {
         do {
-            let items = try context.fetch(ToDo.fetchRequest())
+            let items = try context.fetch(TodoItem.fetchRequest())
             return items
         } catch {
             
@@ -22,7 +22,7 @@ class CoreDataManager {
     }
     
     func createItem(_ item: String, user: String) {
-        let newItem = ToDo(context: context)
+        let newItem = TodoItem(context: context)
         newItem.username = user
         newItem.todoItem = item
         newItem.createdAt = Date()
@@ -34,7 +34,7 @@ class CoreDataManager {
         }
     }
     
-    func editItem(item: ToDo, newTodoItem: String) {
+    func editItem(item: TodoItem, newTodoItem: String) {
         item.todoItem = newTodoItem
         
         do {
@@ -44,7 +44,7 @@ class CoreDataManager {
         }
     }
     
-    func deleteItem(item: ToDo) {
+    func deleteItem(item: TodoItem) {
         context.delete(item)
         
         do {

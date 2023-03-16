@@ -33,7 +33,7 @@ final class AppRouter {
     init(window: UIWindow) {
         navigationController = UINavigationController()
         window.rootViewController = navigationController
-
+        
         store.subscribe(self) {
             $0.select {
                 $0.routingState
@@ -42,6 +42,13 @@ final class AppRouter {
     }
     
     fileprivate func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        let newViewControllerType = type(of: viewController)
+        if let currentVc = navigationController.topViewController {
+            let currentViewControllerType = type(of: currentVc)
+            if currentViewControllerType == newViewControllerType {
+                return
+            }
+        }
         navigationController.pushViewController(viewController, animated: animated)
     }
 }

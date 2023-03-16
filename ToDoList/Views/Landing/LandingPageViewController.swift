@@ -42,6 +42,9 @@ class LandingPageViewController: UIViewController {
         let alert = UIAlertController(title: "Change Users",
                                       message: nil,
                                       preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "admin@admin.com", style: .default, handler: { _ in
+            store.dispatch(ChangeCurrentUserAction(username: "admin@admin.com"))
+        }))
         alert.addAction(UIAlertAction(title: "Login", style: .default, handler: { _ in
             store.dispatch(RoutingAction(destination: .login))
         }))

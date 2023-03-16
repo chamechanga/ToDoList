@@ -17,9 +17,9 @@
 		2D7B735529C148AE00DCEA4C /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B735329C148AE00DCEA4C /* ToDoViewController.swift */; };
 		2D7B735629C148AE00DCEA4C /* ToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7B735429C148AE00DCEA4C /* ToDoViewController.xib */; };
 		2D7B735929C193A900DCEA4C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B735829C193A900DCEA4C /* CoreDataManager.swift */; };
-		2D7B735F29C1946900DCEA4C /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B735D29C1946900DCEA4C /* ToDoList.xcdatamodeld */; };
-		2D7B736429C1987F00DCEA4C /* ToDo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736229C1987F00DCEA4C /* ToDo+CoreDataProperties.swift */; };
-		2D7B736529C1987F00DCEA4C /* ToDo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736329C1987F00DCEA4C /* ToDo+CoreDataClass.swift */; };
+		2D7B735F29C1946900DCEA4C /* TodoItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B735D29C1946900DCEA4C /* TodoItem.xcdatamodeld */; };
+		2D7B736429C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736229C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift */; };
+		2D7B736529C1987F00DCEA4C /* TodoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736329C1987F00DCEA4C /* TodoItem+CoreDataClass.swift */; };
 		2D7B736929C1AAF600DCEA4C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736829C1AAF600DCEA4C /* Date.swift */; };
 		2D7B736B29C2E2A100DCEA4C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736A29C2E2A100DCEA4C /* UserDefaultsManager.swift */; };
 		2D7DA1C129C30B18006F8F59 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1C029C30B18006F8F59 /* AppState.swift */; };
@@ -28,6 +28,13 @@
 		2D7DA1C929C30F6D006F8F59 /* RoutingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1C829C30F6D006F8F59 /* RoutingState.swift */; };
 		2D7DA1CB29C31093006F8F59 /* RoutingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1CA29C31093006F8F59 /* RoutingReducer.swift */; };
 		2D7DA1CE29C31EF6006F8F59 /* RoutingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1CD29C31EF6006F8F59 /* RoutingAction.swift */; };
+		2D7DA1D029C32AD2006F8F59 /* CurrentUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1CF29C32AD2006F8F59 /* CurrentUserState.swift */; };
+		2D7DA1D229C32B65006F8F59 /* ChangeCurrentUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D129C32B65006F8F59 /* ChangeCurrentUserAction.swift */; };
+		2D7DA1D429C32BDC006F8F59 /* CurrentUserReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D329C32BDC006F8F59 /* CurrentUserReducer.swift */; };
+		2D7DA1D629C33DC9006F8F59 /* TodoListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D529C33DC9006F8F59 /* TodoListState.swift */; };
+		2D7DA1D829C33E16006F8F59 /* TodoListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D729C33E16006F8F59 /* TodoListAction.swift */; };
+		2D7DA1DA29C33EA5006F8F59 /* TodoListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D929C33EA5006F8F59 /* TodoListReducer.swift */; };
+		2D7DA1DE29C35593006F8F59 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1DD29C35593006F8F59 /* UIViewController.swift */; };
 		2DA40C8C29C01A12005325F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA40C8B29C01A12005325F3 /* AppDelegate.swift */; };
 		2DA40C9529C01A13005325F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA40C9429C01A13005325F3 /* Assets.xcassets */; };
 		2DA40C9829C01A13005325F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA40C9629C01A13005325F3 /* LaunchScreen.storyboard */; };
@@ -77,8 +84,8 @@
 		2D7B735429C148AE00DCEA4C /* ToDoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoViewController.xib; sourceTree = "<group>"; };
 		2D7B735829C193A900DCEA4C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2D7B735E29C1946900DCEA4C /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
-		2D7B736229C1987F00DCEA4C /* ToDo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ToDo+CoreDataProperties.swift"; path = "/Users/indra/Desktop/ToDoList/ToDoList/ToDo+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		2D7B736329C1987F00DCEA4C /* ToDo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ToDo+CoreDataClass.swift"; path = "/Users/indra/Desktop/ToDoList/ToDoList/ToDo+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		2D7B736229C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodoItem+CoreDataProperties.swift"; path = "/Users/indra/Desktop/ToDoList/ToDoList/TodoItem+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		2D7B736329C1987F00DCEA4C /* TodoItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodoItem+CoreDataClass.swift"; path = "/Users/indra/Desktop/ToDoList/ToDoList/TodoItem+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		2D7B736829C1AAF600DCEA4C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		2D7B736A29C2E2A100DCEA4C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		2D7DA1C029C30B18006F8F59 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -87,6 +94,13 @@
 		2D7DA1C829C30F6D006F8F59 /* RoutingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingState.swift; sourceTree = "<group>"; };
 		2D7DA1CA29C31093006F8F59 /* RoutingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingReducer.swift; sourceTree = "<group>"; };
 		2D7DA1CD29C31EF6006F8F59 /* RoutingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingAction.swift; sourceTree = "<group>"; };
+		2D7DA1CF29C32AD2006F8F59 /* CurrentUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserState.swift; sourceTree = "<group>"; };
+		2D7DA1D129C32B65006F8F59 /* ChangeCurrentUserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCurrentUserAction.swift; sourceTree = "<group>"; };
+		2D7DA1D329C32BDC006F8F59 /* CurrentUserReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserReducer.swift; sourceTree = "<group>"; };
+		2D7DA1D529C33DC9006F8F59 /* TodoListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListState.swift; sourceTree = "<group>"; };
+		2D7DA1D729C33E16006F8F59 /* TodoListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAction.swift; sourceTree = "<group>"; };
+		2D7DA1D929C33EA5006F8F59 /* TodoListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListReducer.swift; sourceTree = "<group>"; };
+		2D7DA1DD29C35593006F8F59 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2DA40C8829C01A12005325F3 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA40C8B29C01A12005325F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA40C9429C01A13005325F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,8 +211,8 @@
 		2D7B736629C1990E00DCEA4C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2D7B736329C1987F00DCEA4C /* ToDo+CoreDataClass.swift */,
-				2D7B736229C1987F00DCEA4C /* ToDo+CoreDataProperties.swift */,
+				2D7B736329C1987F00DCEA4C /* TodoItem+CoreDataClass.swift */,
+				2D7B736229C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -207,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				2D7B736829C1AAF600DCEA4C /* Date.swift */,
+				2D7DA1DD29C35593006F8F59 /* UIViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -216,6 +231,8 @@
 			children = (
 				2D7DA1C029C30B18006F8F59 /* AppState.swift */,
 				2D7DA1C829C30F6D006F8F59 /* RoutingState.swift */,
+				2D7DA1CF29C32AD2006F8F59 /* CurrentUserState.swift */,
+				2D7DA1D529C33DC9006F8F59 /* TodoListState.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -225,6 +242,8 @@
 			children = (
 				2D7DA1C329C30D2B006F8F59 /* AppReducer.swift */,
 				2D7DA1CA29C31093006F8F59 /* RoutingReducer.swift */,
+				2D7DA1D329C32BDC006F8F59 /* CurrentUserReducer.swift */,
+				2D7DA1D929C33EA5006F8F59 /* TodoListReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -241,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				2D7DA1CD29C31EF6006F8F59 /* RoutingAction.swift */,
+				2D7DA1D129C32B65006F8F59 /* ChangeCurrentUserAction.swift */,
+				2D7DA1D729C33E16006F8F59 /* TodoListAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -270,10 +291,10 @@
 		2DA40C8A29C01A12005325F3 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				2D7DA1CC29C31EE8006F8F59 /* Actions */,
-				2D7DA1C529C30E7A006F8F59 /* Router */,
-				2D7DA1C229C30D1F006F8F59 /* Reducer */,
 				2D7DA1BF29C30B06006F8F59 /* Store */,
+				2D7DA1CC29C31EE8006F8F59 /* Actions */,
+				2D7DA1C229C30D1F006F8F59 /* Reducer */,
+				2D7DA1C529C30E7A006F8F59 /* Router */,
 				2D7B736729C1AAAA00DCEA4C /* Helpers */,
 				2D7B736629C1990E00DCEA4C /* Data */,
 				2D7B735729C1938900DCEA4C /* Services */,
@@ -285,7 +306,7 @@
 				2DA40C9629C01A13005325F3 /* LaunchScreen.storyboard */,
 				2D48988729C0C9AA002634FC /* Info.plist */,
 				2DD9616C29C09B7A00433D50 /* GoogleService-Info.plist */,
-				2D7B735D29C1946900DCEA4C /* ToDoList.xcdatamodeld */,
+				2D7B735D29C1946900DCEA4C /* TodoItem.xcdatamodeld */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -603,28 +624,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D7DA1DE29C35593006F8F59 /* UIViewController.swift in Sources */,
 				2D7DA1CE29C31EF6006F8F59 /* RoutingAction.swift in Sources */,
 				2D7B735529C148AE00DCEA4C /* ToDoViewController.swift in Sources */,
 				2D3131B729C0B52800FD09B6 /* SignupViewController.swift in Sources */,
 				2D7DA1C729C30E9A006F8F59 /* AppRouter.swift in Sources */,
 				2D7B736B29C2E2A100DCEA4C /* UserDefaultsManager.swift in Sources */,
 				2D7DA1CB29C31093006F8F59 /* RoutingReducer.swift in Sources */,
+				2D7DA1D829C33E16006F8F59 /* TodoListAction.swift in Sources */,
+				2D7DA1D229C32B65006F8F59 /* ChangeCurrentUserAction.swift in Sources */,
 				2D7B736929C1AAF600DCEA4C /* Date.swift in Sources */,
-				2D7B736429C1987F00DCEA4C /* ToDo+CoreDataProperties.swift in Sources */,
-				2D7B735F29C1946900DCEA4C /* ToDoList.xcdatamodeld in Sources */,
+				2D7B736429C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift in Sources */,
+				2D7B735F29C1946900DCEA4C /* TodoItem.xcdatamodeld in Sources */,
 				2D7DA1C129C30B18006F8F59 /* AppState.swift in Sources */,
 				2D3131AD29C0A18200FD09B6 /* FirebaseAuthManager.swift in Sources */,
 				2D48988D29C0CCA6002634FC /* HourlyTempCollectionViewCell.swift in Sources */,
 				2DA40CBD29C05148005325F3 /* LandingPageViewController.swift in Sources */,
-				2D7B736529C1987F00DCEA4C /* ToDo+CoreDataClass.swift in Sources */,
+				2D7DA1D429C32BDC006F8F59 /* CurrentUserReducer.swift in Sources */,
+				2D7B736529C1987F00DCEA4C /* TodoItem+CoreDataClass.swift in Sources */,
 				2D7B735929C193A900DCEA4C /* CoreDataManager.swift in Sources */,
 				2D7DA1C429C30D2B006F8F59 /* AppReducer.swift in Sources */,
 				2DD9616729C0768E00433D50 /* NetworkManager.swift in Sources */,
+				2D7DA1DA29C33EA5006F8F59 /* TodoListReducer.swift in Sources */,
+				2D7DA1D029C32AD2006F8F59 /* CurrentUserState.swift in Sources */,
 				2D3131B129C0B11C00FD09B6 /* LoginViewController.swift in Sources */,
 				2DA40CC029C06C96005325F3 /* WeatherAPI.swift in Sources */,
 				2DD9616A29C079BC00433D50 /* Forecast.swift in Sources */,
 				2D7DA1C929C30F6D006F8F59 /* RoutingState.swift in Sources */,
 				2DA40C8C29C01A12005325F3 /* AppDelegate.swift in Sources */,
+				2D7DA1D629C33DC9006F8F59 /* TodoListState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,13 +990,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2D7B735D29C1946900DCEA4C /* ToDoList.xcdatamodeld */ = {
+		2D7B735D29C1946900DCEA4C /* TodoItem.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				2D7B735E29C1946900DCEA4C /* ToDoList.xcdatamodel */,
 			);
 			currentVersion = 2D7B735E29C1946900DCEA4C /* ToDoList.xcdatamodel */;
-			path = ToDoList.xcdatamodeld;
+			path = TodoItem.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

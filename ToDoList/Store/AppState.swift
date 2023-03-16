@@ -9,4 +9,6 @@ import ReSwift
 
 struct AppState: StateType {
     let routingState: RoutingState
+    let currentUserState: CurrentUserState
+    let todoListState: TodoListState
 }
