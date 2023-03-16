@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LandingPageViewController" customModule="ToDoList" customModuleProvider="target">
+            <connections>
+                <outlet property="dateLabel" destination="Aqs-rc-qDJ" id="CnC-h4-zCm"/>
+                <outlet property="hourlyTemperatureCollectionView" destination="qBa-Jc-REk" id="fT6-5z-oTC"/>
+                <outlet property="timeLabel" destination="yfA-Nh-4OI" id="STz-iO-HxM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weatherLabel" destination="2Zl-PG-8Us" id="gBD-me-YQJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqs-rc-qDJ">
+                    <rect key="frame" x="16" y="179" width="361" height="20.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfA-Nh-4OI">
+                    <rect key="frame" x="16" y="219.33333333333334" width="361" height="60.000000000000028"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zl-PG-8Us">
+                    <rect key="frame" x="16" y="299.33333333333331" width="361" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uK-I1-fiL">
+                    <rect key="frame" x="16" y="560.33333333333337" width="361" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                    <connections>
+                        <action selector="redirectTodoPage:" destination="-1" eventType="touchUpInside" id="CBI-sA-v8u"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qBa-Jc-REk">
+                    <rect key="frame" x="16" y="380.33333333333331" width="361" height="149.99999999999994"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="QTt-jr-OWA"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HEa-Me-a06">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Aqs-rc-qDJ" firstAttribute="leading" secondItem="yfA-Nh-4OI" secondAttribute="leading" id="05B-nQ-DG7"/>
+                <constraint firstItem="yfA-Nh-4OI" firstAttribute="trailing" secondItem="2Zl-PG-8Us" secondAttribute="trailing" id="32O-7Z-LNf"/>
+                <constraint firstItem="Aqs-rc-qDJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="7hr-Xn-a76"/>
+                <constraint firstItem="1uK-I1-fiL" firstAttribute="leading" secondItem="qBa-Jc-REk" secondAttribute="leading" id="CZs-GW-fxj"/>
+                <constraint firstItem="1uK-I1-fiL" firstAttribute="top" secondItem="qBa-Jc-REk" secondAttribute="bottom" constant="30" id="F7x-jT-oQt"/>
+                <constraint firstItem="Aqs-rc-qDJ" firstAttribute="trailing" secondItem="yfA-Nh-4OI" secondAttribute="trailing" id="Lj5-cB-73O"/>
+                <constraint firstItem="2Zl-PG-8Us" firstAttribute="top" secondItem="yfA-Nh-4OI" secondAttribute="bottom" constant="20" id="S5M-L4-agl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Zl-PG-8Us" secondAttribute="trailing" constant="16" id="TNL-Pn-z1G"/>
+                <constraint firstItem="qBa-Jc-REk" firstAttribute="top" secondItem="2Zl-PG-8Us" secondAttribute="bottom" constant="60" id="mJY-S7-71V"/>
+                <constraint firstItem="2Zl-PG-8Us" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mvg-ee-irq"/>
+                <constraint firstItem="yfA-Nh-4OI" firstAttribute="top" secondItem="Aqs-rc-qDJ" secondAttribute="bottom" constant="20" id="oaB-1S-UKr"/>
+                <constraint firstItem="qBa-Jc-REk" firstAttribute="trailing" secondItem="yfA-Nh-4OI" secondAttribute="trailing" id="ohM-sv-SWC"/>
+                <constraint firstItem="yfA-Nh-4OI" firstAttribute="leading" secondItem="2Zl-PG-8Us" secondAttribute="leading" id="sss-tD-aBt"/>
+                <constraint firstItem="1uK-I1-fiL" firstAttribute="trailing" secondItem="qBa-Jc-REk" secondAttribute="trailing" id="uC0-po-lLX"/>
+                <constraint firstItem="qBa-Jc-REk" firstAttribute="leading" secondItem="yfA-Nh-4OI" secondAttribute="leading" id="wry-5N-9hE"/>
+            </constraints>
+            <point key="canvasLocation" x="20.610687022900763" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
