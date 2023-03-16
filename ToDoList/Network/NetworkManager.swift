@@ -10,20 +10,18 @@ import Moya
 protocol Networkable {
     var provider: MoyaProvider<WeatherAPI> { get }
     
-    func getForecast(latitude: Float, longitude: Float, hourly: String, currentWeather: Bool, completion: @escaping (Forecast?, Error?) -> ())
+    func getForecast(latitude: Double, longitude: Double, completion: @escaping (Forecast?, Error?) -> ())
 }
 
 class NetworkManager: Networkable {
     let provider = MoyaProvider<WeatherAPI>(plugins: [NetworkLoggerPlugin()])
     
     func getForecast(
-        latitude: Float,
-        longitude: Float,
-        hourly: String,
-        currentWeather: Bool,
+        latitude: Double,
+        longitude: Double,
         completion: @escaping (Forecast?, Error?) -> ())
     {
-        provider.request(.forecast(latitude: latitude, longitude: longitude, hourly: hourly, currentWeather: currentWeather)) { result in
+        provider.request(.forecast(latitude: latitude, longitude: longitude)) { result in
             switch result {
             case .success(let response):
                 let decoder = JSONDecoder()

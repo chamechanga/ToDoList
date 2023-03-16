@@ -8,7 +8,7 @@
 import Moya
 
 enum WeatherAPI {
-    case forecast(latitude: Float, longitude: Float, hourly: String, currentWeather: Bool)
+    case forecast(latitude: Double, longitude: Double)
 }
 
 extension WeatherAPI: TargetType {
@@ -29,11 +29,11 @@ extension WeatherAPI: TargetType {
     
     var task: Moya.Task {
         switch self {
-        case .forecast(let latitude, let longitude, let hourly, let currentWeather):
+        case .forecast(let latitude, let longitude):
             return .requestParameters(parameters: ["latitude": latitude,
                                                    "longitude": longitude,
-                                                   "hourly": hourly,
-                                                   "current_weather": currentWeather],
+                                                   "hourly": "temperature_2m",
+                                                   "current_weather": true],
                                       encoding: URLEncoding.queryString)
         }
     }
