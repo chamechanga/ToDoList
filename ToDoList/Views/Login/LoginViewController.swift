@@ -28,18 +28,23 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         guard let email = emailTextField.text,
               let password = passwordTextField.text else {
+            showAlert(title: "Invalid email or password...", message: nil)
             return
         }
         
-        FirebaseAuthManager.login(email: email, password: password) { result in
+        showProgress()
+        
+        FirebaseAuthManager.login(email: email, password: password) { [weak self] result in
             switch result {
             case .success:
                 store.dispatch(ChangeCurrentUserAction(username: email))
                 store.dispatch(SaveUserAction(username: email))
                 store.dispatch(RoutingAction(destination: .landing))
-            case .failure:
-                print("failure")
+            case .failure(let error):
+                self?.showAlert(title: error.localizedDescription, message: nil)
             }
+            
+            self?.hideProgress()
         }
     }
 }

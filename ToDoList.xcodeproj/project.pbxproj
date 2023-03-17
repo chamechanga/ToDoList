@@ -12,6 +12,8 @@
 		2D1A767229C3F90200AF3ADE /* LocationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A767129C3F90200AF3ADE /* LocationAction.swift */; };
 		2D1A767429C412C300AF3ADE /* UsersState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A767329C412C300AF3ADE /* UsersState.swift */; };
 		2D1A767629C412DD00AF3ADE /* UsersReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A767529C412DD00AF3ADE /* UsersReducer.swift */; };
+		2D1A767829C4572700AF3ADE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A767729C4572700AF3ADE /* ProgressHUD.swift */; };
+		2D1A767A29C4575100AF3ADE /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A767929C4575100AF3ADE /* UIViewController.swift */; };
 		2D3131AD29C0A18200FD09B6 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3131AC29C0A18200FD09B6 /* FirebaseAuthManager.swift */; };
 		2D3131B129C0B11C00FD09B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3131AF29C0B11C00FD09B6 /* LoginViewController.swift */; };
 		2D3131B229C0B11C00FD09B6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3131B029C0B11C00FD09B6 /* LoginViewController.xib */; };
@@ -25,7 +27,7 @@
 		2D7B735F29C1946900DCEA4C /* TodoItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B735D29C1946900DCEA4C /* TodoItem.xcdatamodeld */; };
 		2D7B736429C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736229C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift */; };
 		2D7B736529C1987F00DCEA4C /* TodoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736329C1987F00DCEA4C /* TodoItem+CoreDataClass.swift */; };
-		2D7B736929C1AAF600DCEA4C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736829C1AAF600DCEA4C /* Date.swift */; };
+		2D7B736929C1AAF600DCEA4C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736829C1AAF600DCEA4C /* Date+.swift */; };
 		2D7B736B29C2E2A100DCEA4C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7B736A29C2E2A100DCEA4C /* UserDefaultsManager.swift */; };
 		2D7DA1C129C30B18006F8F59 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1C029C30B18006F8F59 /* AppState.swift */; };
 		2D7DA1C429C30D2B006F8F59 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1C329C30D2B006F8F59 /* AppReducer.swift */; };
@@ -39,7 +41,7 @@
 		2D7DA1D629C33DC9006F8F59 /* TodoListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D529C33DC9006F8F59 /* TodoListState.swift */; };
 		2D7DA1D829C33E16006F8F59 /* TodoListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D729C33E16006F8F59 /* TodoListAction.swift */; };
 		2D7DA1DA29C33EA5006F8F59 /* TodoListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D929C33EA5006F8F59 /* TodoListReducer.swift */; };
-		2D7DA1DE29C35593006F8F59 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1DD29C35593006F8F59 /* String.swift */; };
+		2D7DA1DE29C35593006F8F59 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1DD29C35593006F8F59 /* String+.swift */; };
 		2D7DA1F129C3788C006F8F59 /* WeatherMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1F029C3788C006F8F59 /* WeatherMapper.swift */; };
 		2DA40C8C29C01A12005325F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA40C8B29C01A12005325F3 /* AppDelegate.swift */; };
 		2DA40C9529C01A13005325F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA40C9429C01A13005325F3 /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		2D1A767129C3F90200AF3ADE /* LocationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAction.swift; sourceTree = "<group>"; };
 		2D1A767329C412C300AF3ADE /* UsersState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersState.swift; sourceTree = "<group>"; };
 		2D1A767529C412DD00AF3ADE /* UsersReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersReducer.swift; sourceTree = "<group>"; };
+		2D1A767729C4572700AF3ADE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		2D1A767929C4575100AF3ADE /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2D3131AC29C0A18200FD09B6 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		2D3131AF29C0B11C00FD09B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D3131B029C0B11C00FD09B6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -97,7 +101,7 @@
 		2D7B735E29C1946900DCEA4C /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
 		2D7B736229C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodoItem+CoreDataProperties.swift"; path = "/Users/indra/Desktop/ToDoList/ToDoList/TodoItem+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		2D7B736329C1987F00DCEA4C /* TodoItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodoItem+CoreDataClass.swift"; path = "/Users/indra/Desktop/ToDoList/ToDoList/TodoItem+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		2D7B736829C1AAF600DCEA4C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		2D7B736829C1AAF600DCEA4C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		2D7B736A29C2E2A100DCEA4C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		2D7DA1C029C30B18006F8F59 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2D7DA1C329C30D2B006F8F59 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -111,7 +115,7 @@
 		2D7DA1D529C33DC9006F8F59 /* TodoListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListState.swift; sourceTree = "<group>"; };
 		2D7DA1D729C33E16006F8F59 /* TodoListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAction.swift; sourceTree = "<group>"; };
 		2D7DA1D929C33EA5006F8F59 /* TodoListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListReducer.swift; sourceTree = "<group>"; };
-		2D7DA1DD29C35593006F8F59 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2D7DA1DD29C35593006F8F59 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2D7DA1F029C3788C006F8F59 /* WeatherMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapper.swift; sourceTree = "<group>"; };
 		2DA40C8829C01A12005325F3 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA40C8B29C01A12005325F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,8 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				2D7DA1F029C3788C006F8F59 /* WeatherMapper.swift */,
-				2D7B736829C1AAF600DCEA4C /* Date.swift */,
-				2D7DA1DD29C35593006F8F59 /* String.swift */,
+				2D7B736829C1AAF600DCEA4C /* Date+.swift */,
+				2D7DA1DD29C35593006F8F59 /* String+.swift */,
+				2D1A767729C4572700AF3ADE /* ProgressHUD.swift */,
+				2D1A767929C4575100AF3ADE /* UIViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -658,8 +664,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D7DA1DE29C35593006F8F59 /* String.swift in Sources */,
+				2D7DA1DE29C35593006F8F59 /* String+.swift in Sources */,
 				2D7DA1CE29C31EF6006F8F59 /* RoutingAction.swift in Sources */,
+				2D1A767829C4572700AF3ADE /* ProgressHUD.swift in Sources */,
 				2D7B735529C148AE00DCEA4C /* ToDoViewController.swift in Sources */,
 				2D3131B729C0B52800FD09B6 /* SignupViewController.swift in Sources */,
 				2D1A767229C3F90200AF3ADE /* LocationAction.swift in Sources */,
@@ -669,7 +676,8 @@
 				2D7DA1D829C33E16006F8F59 /* TodoListAction.swift in Sources */,
 				2D7DA1D229C32B65006F8F59 /* UserAction.swift in Sources */,
 				2D1A767029C3F8EB00AF3ADE /* LocationReducer.swift in Sources */,
-				2D7B736929C1AAF600DCEA4C /* Date.swift in Sources */,
+				2D7B736929C1AAF600DCEA4C /* Date+.swift in Sources */,
+				2D1A767A29C4575100AF3ADE /* UIViewController.swift in Sources */,
 				2D7B736429C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift in Sources */,
 				2D7B735F29C1946900DCEA4C /* TodoItem.xcdatamodeld in Sources */,
 				2D7DA1C129C30B18006F8F59 /* AppState.swift in Sources */,

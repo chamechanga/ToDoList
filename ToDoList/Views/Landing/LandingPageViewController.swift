@@ -13,7 +13,6 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var hourlyTemperatureCollectionView: UICollectionView!
     @IBOutlet weak var todoButton: UIButton!
-    private let currentUser: String = store.state.currentUserState.currentUser
     
     let networkManager = NetworkManager()
     
@@ -25,15 +24,10 @@ class LandingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        store.dispatch(RoutingAction(destination: .landing))
         store.dispatch(getLocationCoordinate(state:store:))
         store.dispatch(GetUsersAction())
         self.setupView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        store.dispatch(RoutingAction(destination: .landing))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +51,7 @@ class LandingPageViewController: UIViewController {
     
     func setupView() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Change User", style: .plain, target: self, action: #selector(changeUser))
+        self.navigationItem.hidesBackButton = true
         
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
         
@@ -123,10 +118,14 @@ extension LandingPageViewController: UICollectionViewDataSource, UICollectionVie
 extension LandingPageViewController: StoreSubscriber {
     func newState(state: (locationState: LocationState, usersState: UsersState)) {
         NetworkManager().getForecast(latitude: state.locationState.coordinates.latitude, longitude: state.locationState.coordinates.longitude) { [unowned self] result, error in
-            self.hourlyTemp = result?.hourly.temperature2M ?? []
-            self.time = result?.hourly.time ?? []
-            self.weatherLabel.text = WeatherMapper.getString(fromValue: result?.currentWeather.weathercode ?? 1)
-            self.hourlyTemperatureCollectionView.reloadData()
+            if let error = error {
+                showAlert(title: error.localizedDescription, message: "")
+            } else {
+                self.hourlyTemp = result?.hourly.temperature2M ?? []
+                self.time = result?.hourly.time ?? []
+                self.weatherLabel.text = WeatherMapper.getString(fromValue: result?.currentWeather.weathercode ?? 1)
+                self.hourlyTemperatureCollectionView.reloadData()
+            }
         }
         
         self.users = state.usersState.users
