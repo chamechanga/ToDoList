@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LandingPageViewController" customModule="ToDoList" customModuleProvider="target">
             <connections>
+                <outlet property="currentUserLabel" destination="IcJ-NE-fiW" id="KJW-qA-m9Y"/>
                 <outlet property="dateLabel" destination="Aqs-rc-qDJ" id="CnC-h4-zCm"/>
                 <outlet property="hourlyTemperatureCollectionView" destination="qBa-Jc-REk" id="fT6-5z-oTC"/>
                 <outlet property="timeLabel" destination="yfA-Nh-4OI" id="STz-iO-HxM"/>
@@ -62,6 +63,12 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcJ-NE-fiW">
+                    <rect key="frame" x="24" y="216.33333333333334" width="345" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -72,7 +79,10 @@
                 <constraint firstItem="1uK-I1-fiL" firstAttribute="top" secondItem="qBa-Jc-REk" secondAttribute="bottom" constant="30" id="F7x-jT-oQt"/>
                 <constraint firstItem="Aqs-rc-qDJ" firstAttribute="trailing" secondItem="yfA-Nh-4OI" secondAttribute="trailing" id="Lj5-cB-73O"/>
                 <constraint firstItem="2Zl-PG-8Us" firstAttribute="top" secondItem="yfA-Nh-4OI" secondAttribute="bottom" id="S5M-L4-agl"/>
+                <constraint firstItem="IcJ-NE-fiW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="THe-e0-P5d"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Zl-PG-8Us" secondAttribute="trailing" constant="16" id="TNL-Pn-z1G"/>
+                <constraint firstItem="Aqs-rc-qDJ" firstAttribute="top" secondItem="IcJ-NE-fiW" secondAttribute="bottom" constant="20" id="Uxa-xe-7Uo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IcJ-NE-fiW" secondAttribute="trailing" constant="24" id="f9R-eW-cEX"/>
                 <constraint firstItem="qBa-Jc-REk" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="hLg-r8-UIk"/>
                 <constraint firstItem="qBa-Jc-REk" firstAttribute="top" secondItem="2Zl-PG-8Us" secondAttribute="bottom" constant="30" id="mJY-S7-71V"/>
                 <constraint firstItem="2Zl-PG-8Us" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mvg-ee-irq"/>

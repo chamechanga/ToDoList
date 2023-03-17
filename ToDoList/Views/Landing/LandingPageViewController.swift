@@ -12,9 +12,8 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var hourlyTemperatureCollectionView: UICollectionView!
+    @IBOutlet weak var currentUserLabel: UILabel!
     @IBOutlet weak var todoButton: UIButton!
-    
-    let networkManager = NetworkManager()
     
     var timer: Timer?
     var hourlyTemp: [Double] = []
@@ -24,10 +23,15 @@ class LandingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        store.dispatch(RoutingAction(destination: .landing))
         store.dispatch(getLocationCoordinate(state:store:))
         store.dispatch(GetUsersAction())
         self.setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        store.dispatch(RoutingAction(destination: .landing))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,7 +41,8 @@ class LandingPageViewController: UIViewController {
             $0.select {
                 (
                     $0.locationState,
-                    $0.usersState
+                    $0.usersState,
+                    $0.currentUserState
                 )
             }
         }
@@ -116,7 +121,7 @@ extension LandingPageViewController: UICollectionViewDataSource, UICollectionVie
 }
 
 extension LandingPageViewController: StoreSubscriber {
-    func newState(state: (locationState: LocationState, usersState: UsersState)) {
+    func newState(state: (locationState: LocationState, usersState: UsersState, currentUserState: CurrentUserState)) {
         NetworkManager().getForecast(latitude: state.locationState.coordinates.latitude, longitude: state.locationState.coordinates.longitude) { [unowned self] result, error in
             if let error = error {
                 showAlert(title: error.localizedDescription, message: "")
@@ -129,6 +134,8 @@ extension LandingPageViewController: StoreSubscriber {
         }
         
         self.users = state.usersState.users
+        self.currentUserLabel.isHidden = state.currentUserState.currentUser.isEmpty
+        self.currentUserLabel.text = "Hi, \(state.currentUserState.currentUser)!"
         self.todoButton.isHidden = self.users.isEmpty
     }
 }
