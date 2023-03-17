@@ -18,6 +18,12 @@ class LoginViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        store.dispatch(RoutingAction(destination: .login))
+    }
+    
     // TODO: - [Non-prio] Add validation
     @IBAction func login(_ sender: UIButton) {
         guard let email = emailTextField.text,
@@ -29,6 +35,7 @@ class LoginViewController: UIViewController {
             switch result {
             case .success:
                 store.dispatch(ChangeCurrentUserAction(username: email))
+                store.dispatch(SaveUserAction(username: email))
                 store.dispatch(RoutingAction(destination: .landing))
             case .failure:
                 print("failure")

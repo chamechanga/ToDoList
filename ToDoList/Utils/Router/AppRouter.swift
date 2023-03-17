@@ -49,6 +49,7 @@ final class AppRouter {
                 return
             }
         }
+        
         navigationController.pushViewController(viewController, animated: animated)
     }
 }

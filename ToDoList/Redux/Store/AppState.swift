@@ -11,4 +11,6 @@ struct AppState: StateType {
     let routingState: RoutingState
     let currentUserState: CurrentUserState
     let todoListState: TodoListState
+    let locationState: LocationState
+    let usersState: UsersState
 }

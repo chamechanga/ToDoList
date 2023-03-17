@@ -18,6 +18,12 @@ class SignupViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        store.dispatch(RoutingAction(destination: .signup))
+    }
+    
     // TODO: - [Non-prio] Add validation
     @IBAction func signup(_ sender: UIButton) {
         guard let email = emailTextField.text,
@@ -29,6 +35,7 @@ class SignupViewController: UIViewController {
             switch result {
             case .success:
                 store.dispatch(ChangeCurrentUserAction(username: email))
+                store.dispatch(SaveUserAction(username: email))
                 store.dispatch(RoutingAction(destination: .landing))
             case .failure:
                 print("failure")

@@ -10,3 +10,10 @@ import ReSwift
 struct ChangeCurrentUserAction: Action {
     let username: String
 }
+
+struct GetUsersAction: Action {
+}
+
+struct SaveUserAction: Action {
+    let username: String
+}

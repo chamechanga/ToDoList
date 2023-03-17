@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1A766E29C3F8C800AF3ADE /* LocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A766D29C3F8C800AF3ADE /* LocationState.swift */; };
+		2D1A767029C3F8EB00AF3ADE /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A766F29C3F8EB00AF3ADE /* LocationReducer.swift */; };
+		2D1A767229C3F90200AF3ADE /* LocationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A767129C3F90200AF3ADE /* LocationAction.swift */; };
+		2D1A767429C412C300AF3ADE /* UsersState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A767329C412C300AF3ADE /* UsersState.swift */; };
+		2D1A767629C412DD00AF3ADE /* UsersReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A767529C412DD00AF3ADE /* UsersReducer.swift */; };
 		2D3131AD29C0A18200FD09B6 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3131AC29C0A18200FD09B6 /* FirebaseAuthManager.swift */; };
 		2D3131B129C0B11C00FD09B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3131AF29C0B11C00FD09B6 /* LoginViewController.swift */; };
 		2D3131B229C0B11C00FD09B6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3131B029C0B11C00FD09B6 /* LoginViewController.xib */; };
@@ -29,12 +34,13 @@
 		2D7DA1CB29C31093006F8F59 /* RoutingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1CA29C31093006F8F59 /* RoutingReducer.swift */; };
 		2D7DA1CE29C31EF6006F8F59 /* RoutingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1CD29C31EF6006F8F59 /* RoutingAction.swift */; };
 		2D7DA1D029C32AD2006F8F59 /* CurrentUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1CF29C32AD2006F8F59 /* CurrentUserState.swift */; };
-		2D7DA1D229C32B65006F8F59 /* ChangeCurrentUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D129C32B65006F8F59 /* ChangeCurrentUserAction.swift */; };
+		2D7DA1D229C32B65006F8F59 /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D129C32B65006F8F59 /* UserAction.swift */; };
 		2D7DA1D429C32BDC006F8F59 /* CurrentUserReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D329C32BDC006F8F59 /* CurrentUserReducer.swift */; };
 		2D7DA1D629C33DC9006F8F59 /* TodoListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D529C33DC9006F8F59 /* TodoListState.swift */; };
 		2D7DA1D829C33E16006F8F59 /* TodoListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D729C33E16006F8F59 /* TodoListAction.swift */; };
 		2D7DA1DA29C33EA5006F8F59 /* TodoListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1D929C33EA5006F8F59 /* TodoListReducer.swift */; };
-		2D7DA1DE29C35593006F8F59 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1DD29C35593006F8F59 /* UIViewController.swift */; };
+		2D7DA1DE29C35593006F8F59 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1DD29C35593006F8F59 /* String.swift */; };
+		2D7DA1F129C3788C006F8F59 /* WeatherMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7DA1F029C3788C006F8F59 /* WeatherMapper.swift */; };
 		2DA40C8C29C01A12005325F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA40C8B29C01A12005325F3 /* AppDelegate.swift */; };
 		2DA40C9529C01A13005325F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA40C9429C01A13005325F3 /* Assets.xcassets */; };
 		2DA40C9829C01A13005325F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA40C9629C01A13005325F3 /* LaunchScreen.storyboard */; };
@@ -72,6 +78,11 @@
 /* Begin PBXFileReference section */
 		03007484353C80BCF35A004F /* Pods_ToDoList_ToDoListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList_ToDoListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D676845745820834292841D /* Pods_ToDoListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D1A766D29C3F8C800AF3ADE /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
+		2D1A766F29C3F8EB00AF3ADE /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
+		2D1A767129C3F90200AF3ADE /* LocationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAction.swift; sourceTree = "<group>"; };
+		2D1A767329C412C300AF3ADE /* UsersState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersState.swift; sourceTree = "<group>"; };
+		2D1A767529C412DD00AF3ADE /* UsersReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersReducer.swift; sourceTree = "<group>"; };
 		2D3131AC29C0A18200FD09B6 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		2D3131AF29C0B11C00FD09B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D3131B029C0B11C00FD09B6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -95,12 +106,13 @@
 		2D7DA1CA29C31093006F8F59 /* RoutingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingReducer.swift; sourceTree = "<group>"; };
 		2D7DA1CD29C31EF6006F8F59 /* RoutingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingAction.swift; sourceTree = "<group>"; };
 		2D7DA1CF29C32AD2006F8F59 /* CurrentUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserState.swift; sourceTree = "<group>"; };
-		2D7DA1D129C32B65006F8F59 /* ChangeCurrentUserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCurrentUserAction.swift; sourceTree = "<group>"; };
+		2D7DA1D129C32B65006F8F59 /* UserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
 		2D7DA1D329C32BDC006F8F59 /* CurrentUserReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserReducer.swift; sourceTree = "<group>"; };
 		2D7DA1D529C33DC9006F8F59 /* TodoListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListState.swift; sourceTree = "<group>"; };
 		2D7DA1D729C33E16006F8F59 /* TodoListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAction.swift; sourceTree = "<group>"; };
 		2D7DA1D929C33EA5006F8F59 /* TodoListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListReducer.swift; sourceTree = "<group>"; };
-		2D7DA1DD29C35593006F8F59 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		2D7DA1DD29C35593006F8F59 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2D7DA1F029C3788C006F8F59 /* WeatherMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapper.swift; sourceTree = "<group>"; };
 		2DA40C8829C01A12005325F3 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA40C8B29C01A12005325F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA40C9429C01A13005325F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,20 +220,21 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		2D7B736629C1990E00DCEA4C /* Data */ = {
+		2D7B736629C1990E00DCEA4C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				2D7B736329C1987F00DCEA4C /* TodoItem+CoreDataClass.swift */,
 				2D7B736229C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift */,
 			);
-			path = Data;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		2D7B736729C1AAAA00DCEA4C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2D7DA1F029C3788C006F8F59 /* WeatherMapper.swift */,
 				2D7B736829C1AAF600DCEA4C /* Date.swift */,
-				2D7DA1DD29C35593006F8F59 /* UIViewController.swift */,
+				2D7DA1DD29C35593006F8F59 /* String.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -233,6 +246,8 @@
 				2D7DA1C829C30F6D006F8F59 /* RoutingState.swift */,
 				2D7DA1CF29C32AD2006F8F59 /* CurrentUserState.swift */,
 				2D7DA1D529C33DC9006F8F59 /* TodoListState.swift */,
+				2D1A766D29C3F8C800AF3ADE /* LocationState.swift */,
+				2D1A767329C412C300AF3ADE /* UsersState.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -244,6 +259,8 @@
 				2D7DA1CA29C31093006F8F59 /* RoutingReducer.swift */,
 				2D7DA1D329C32BDC006F8F59 /* CurrentUserReducer.swift */,
 				2D7DA1D929C33EA5006F8F59 /* TodoListReducer.swift */,
+				2D1A766F29C3F8EB00AF3ADE /* LocationReducer.swift */,
+				2D1A767529C412DD00AF3ADE /* UsersReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -260,10 +277,31 @@
 			isa = PBXGroup;
 			children = (
 				2D7DA1CD29C31EF6006F8F59 /* RoutingAction.swift */,
-				2D7DA1D129C32B65006F8F59 /* ChangeCurrentUserAction.swift */,
+				2D7DA1D129C32B65006F8F59 /* UserAction.swift */,
 				2D7DA1D729C33E16006F8F59 /* TodoListAction.swift */,
+				2D1A767129C3F90200AF3ADE /* LocationAction.swift */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		2D7DA1E329C36116006F8F59 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				2D7DA1BF29C30B06006F8F59 /* Store */,
+				2D7DA1C229C30D1F006F8F59 /* Reducer */,
+				2D7DA1CC29C31EE8006F8F59 /* Actions */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		2D7DA1E429C36124006F8F59 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2D7DA1C529C30E7A006F8F59 /* Router */,
+				2D7B736729C1AAAA00DCEA4C /* Helpers */,
+				2D7B735729C1938900DCEA4C /* Services */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		2DA40C7F29C01A12005325F3 = {
@@ -291,13 +329,9 @@
 		2DA40C8A29C01A12005325F3 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				2D7DA1BF29C30B06006F8F59 /* Store */,
-				2D7DA1CC29C31EE8006F8F59 /* Actions */,
-				2D7DA1C229C30D1F006F8F59 /* Reducer */,
-				2D7DA1C529C30E7A006F8F59 /* Router */,
-				2D7B736729C1AAAA00DCEA4C /* Helpers */,
-				2D7B736629C1990E00DCEA4C /* Data */,
-				2D7B735729C1938900DCEA4C /* Services */,
+				2D7DA1E329C36116006F8F59 /* Redux */,
+				2D7DA1E429C36124006F8F59 /* Utils */,
+				2D7B736629C1990E00DCEA4C /* CoreData */,
 				2DD9616B29C08BBB00433D50 /* Views */,
 				2DD9616829C079AE00433D50 /* Models */,
 				2DD9616529C0768000433D50 /* Network */,
@@ -624,15 +658,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D7DA1DE29C35593006F8F59 /* UIViewController.swift in Sources */,
+				2D7DA1DE29C35593006F8F59 /* String.swift in Sources */,
 				2D7DA1CE29C31EF6006F8F59 /* RoutingAction.swift in Sources */,
 				2D7B735529C148AE00DCEA4C /* ToDoViewController.swift in Sources */,
 				2D3131B729C0B52800FD09B6 /* SignupViewController.swift in Sources */,
+				2D1A767229C3F90200AF3ADE /* LocationAction.swift in Sources */,
 				2D7DA1C729C30E9A006F8F59 /* AppRouter.swift in Sources */,
 				2D7B736B29C2E2A100DCEA4C /* UserDefaultsManager.swift in Sources */,
 				2D7DA1CB29C31093006F8F59 /* RoutingReducer.swift in Sources */,
 				2D7DA1D829C33E16006F8F59 /* TodoListAction.swift in Sources */,
-				2D7DA1D229C32B65006F8F59 /* ChangeCurrentUserAction.swift in Sources */,
+				2D7DA1D229C32B65006F8F59 /* UserAction.swift in Sources */,
+				2D1A767029C3F8EB00AF3ADE /* LocationReducer.swift in Sources */,
 				2D7B736929C1AAF600DCEA4C /* Date.swift in Sources */,
 				2D7B736429C1987F00DCEA4C /* TodoItem+CoreDataProperties.swift in Sources */,
 				2D7B735F29C1946900DCEA4C /* TodoItem.xcdatamodeld in Sources */,
@@ -643,16 +679,20 @@
 				2D7DA1D429C32BDC006F8F59 /* CurrentUserReducer.swift in Sources */,
 				2D7B736529C1987F00DCEA4C /* TodoItem+CoreDataClass.swift in Sources */,
 				2D7B735929C193A900DCEA4C /* CoreDataManager.swift in Sources */,
+				2D1A766E29C3F8C800AF3ADE /* LocationState.swift in Sources */,
 				2D7DA1C429C30D2B006F8F59 /* AppReducer.swift in Sources */,
 				2DD9616729C0768E00433D50 /* NetworkManager.swift in Sources */,
 				2D7DA1DA29C33EA5006F8F59 /* TodoListReducer.swift in Sources */,
 				2D7DA1D029C32AD2006F8F59 /* CurrentUserState.swift in Sources */,
+				2D1A767429C412C300AF3ADE /* UsersState.swift in Sources */,
 				2D3131B129C0B11C00FD09B6 /* LoginViewController.swift in Sources */,
 				2DA40CC029C06C96005325F3 /* WeatherAPI.swift in Sources */,
 				2DD9616A29C079BC00433D50 /* Forecast.swift in Sources */,
 				2D7DA1C929C30F6D006F8F59 /* RoutingState.swift in Sources */,
+				2D7DA1F129C3788C006F8F59 /* WeatherMapper.swift in Sources */,
 				2DA40C8C29C01A12005325F3 /* AppDelegate.swift in Sources */,
 				2D7DA1D629C33DC9006F8F59 /* TodoListState.swift in Sources */,
+				2D1A767629C412DD00AF3ADE /* UsersReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

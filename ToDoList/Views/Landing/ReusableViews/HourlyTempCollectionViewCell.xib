@@ -10,24 +10,24 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hourlyTempCell" id="gTV-IL-0wX" customClass="HourlyTempCollectionViewCell" customModule="ToDoList" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="108" height="109"/>
+            <rect key="frame" x="0.0" y="0.0" width="71" height="79"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="108" height="109"/>
+                <rect key="frame" x="0.0" y="0.0" width="71" height="79"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxq-FR-SrM">
-                        <rect key="frame" x="0.0" y="0.0" width="108" height="21"/>
+                        <rect key="frame" x="4" y="10" width="63" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Mss-pP-QTa"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2km-8l-UfP">
-                        <rect key="frame" x="0.0" y="21" width="108" height="88"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2km-8l-UfP">
+                        <rect key="frame" x="4" y="31" width="63" height="38"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -35,20 +35,20 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="2km-8l-UfP" secondAttribute="trailing" id="2gC-vv-zuC"/>
-                <constraint firstAttribute="bottom" secondItem="2km-8l-UfP" secondAttribute="bottom" id="5dr-B5-V1f"/>
-                <constraint firstItem="kxq-FR-SrM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7ed-w8-m2t"/>
-                <constraint firstItem="kxq-FR-SrM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CL9-hb-Q5N"/>
+                <constraint firstAttribute="trailing" secondItem="2km-8l-UfP" secondAttribute="trailing" constant="4" id="2gC-vv-zuC"/>
+                <constraint firstAttribute="bottom" secondItem="2km-8l-UfP" secondAttribute="bottom" constant="10" id="5dr-B5-V1f"/>
+                <constraint firstItem="kxq-FR-SrM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="7ed-w8-m2t"/>
+                <constraint firstItem="kxq-FR-SrM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="CL9-hb-Q5N"/>
                 <constraint firstItem="2km-8l-UfP" firstAttribute="top" secondItem="kxq-FR-SrM" secondAttribute="bottom" id="TIT-o6-FCh"/>
-                <constraint firstAttribute="trailing" secondItem="kxq-FR-SrM" secondAttribute="trailing" id="wfd-SL-z6P"/>
-                <constraint firstItem="2km-8l-UfP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zqM-JS-Cdc"/>
+                <constraint firstAttribute="trailing" secondItem="kxq-FR-SrM" secondAttribute="trailing" constant="4" id="wfd-SL-z6P"/>
+                <constraint firstItem="2km-8l-UfP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="zqM-JS-Cdc"/>
             </constraints>
-            <size key="customSize" width="108" height="109"/>
+            <size key="customSize" width="71" height="79"/>
             <connections>
                 <outlet property="temperatureLabel" destination="2km-8l-UfP" id="6C1-ov-IKl"/>
                 <outlet property="timeLabel" destination="kxq-FR-SrM" id="IGa-CK-TwF"/>
             </connections>
-            <point key="canvasLocation" x="131.29770992366412" y="39.7887323943662"/>
+            <point key="canvasLocation" x="103.05343511450381" y="29.225352112676056"/>
         </collectionViewCell>
     </objects>
 </document>

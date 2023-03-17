@@ -10,6 +10,8 @@ import ReSwift
 func appReducer(action: Action, state: AppState?) -> AppState {
     return AppState(routingState: routingReducer(action: action, state: state?.routingState),
                     currentUserState: currentUserReducer(action: action, state: state?.currentUserState),
-                    todoListState: todoReducer(action: action, state: state?.todoListState)
+                    todoListState: todoReducer(action: action, state: state?.todoListState),
+                    locationState: locationReducer(action: action, state: state?.locationState),
+                    usersState: usersReducer(action: action, state: state?.usersState)
     )
 }

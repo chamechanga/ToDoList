@@ -16,7 +16,11 @@ class ToDoViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        store.dispatch(GetTodoListAction(currentUser: currentUser))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         store.subscribe(self) {
             $0.select {
                 $0.todoListState
@@ -24,8 +28,21 @@ class ToDoViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        store.dispatch(RoutingAction(destination: .todo))
+        store.dispatch(GetTodoListAction(currentUser: currentUser))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        store.unsubscribe(self)
+    }
+    
     private func setupView() {
-        title = "Todo List"
+        title = "\(currentUser)'s Todo List"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTodoItem))
         
         self.tableView.dataSource = self
@@ -43,9 +60,10 @@ class ToDoViewController: UIViewController {
         }
     }
     
-    private func showTodoItemAlert(title: String, message: String, _ completionHandler: @escaping (String?) -> ()) {
+    private func showTodoItemAlert(title: String, message: String, predefinedText: String = "", _ completionHandler: @escaping (String?) -> ()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addTextField()
+        alert.textFields?.first?.text = predefinedText
         alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { _ in
             completionHandler(alert.textFields?.first?.text)
         }))
@@ -71,8 +89,8 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: "Edit Items", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { [weak self] _ in
-            self?.showTodoItemAlert(title: "Edit Item", message: "Enter new item") { [weak self] text in
-                guard let `self` = self, let `text` = text else {
+            self?.showTodoItemAlert(title: "Edit Item", message: "Enter new item", predefinedText: self?.todoItems[indexPath.row].todoItem ?? "") { [weak self] text in
+                guard let `self` = self, let text = text else {
                     return
                 }
                 store.dispatch(EditTodoItemAction(currentUser: self.currentUser,

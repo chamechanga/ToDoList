@@ -9,7 +9,4 @@ import ReSwift
 
 struct CurrentUserState: StateType {
     var currentUser: String
-    init(currentUser: String) {
-        self.currentUser = currentUser
-    }
 }

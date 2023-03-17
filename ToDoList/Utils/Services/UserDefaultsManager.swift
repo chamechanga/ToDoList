@@ -18,13 +18,13 @@ struct UserDefaultsManager {
     
     static func saveNew(username: String) {
         var users = getUsers()
-        users.append(["username": username])
+        users.append(username)
         userDefault.set(users, forKey: SessionKeys.users.rawValue)
         
     }
     
-    static func getUsers() -> [[String: String]] {
-        guard let users = userDefault.value(forKey: SessionKeys.users.rawValue) as? [[String : String]] else {
+    static func getUsers() -> [String] {
+        guard let users = userDefault.value(forKey: SessionKeys.users.rawValue) as? [String] else {
             return []
         }
         return users
